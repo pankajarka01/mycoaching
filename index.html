@@ -46,7 +46,6 @@
         /* Form Styling */
         .input-box { width: 100%; padding: 14px; margin-bottom: 15px; border-radius: 5px; border: none; font-size: 16px; display: block; background: #fff; color: #333; }
         
-        /* Standalone Submit Button Style */
         .submit-btn { width: 100%; padding: 15px; background-color: #f8b500 !important; color: #0f2027 !important; font-weight: bold; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; display: block; text-transform: uppercase; margin-top: 5px; }
         .submit-btn:hover { background-color: #fff !important; transition: 0.3s; }
         
@@ -136,11 +135,17 @@
                     <strong>📞 Phone:</strong> <a href="tel:+919165550105">+91 9165550105</a>
                 </div>
                 
-                <!-- Fixed Form to bypass refresh/unsupported methods -->
+                <!-- Web3Forms + WhatsApp Combined Form -->
                 <form id="verifiedWaForm">
-                    <input type="text" id="waName" class="input-box" placeholder="Your Name" required>
-                    <input type="tel" id="waPhone" class="input-box" placeholder="Mobile Number" required>
-                    <select id="waCourse" class="input-box" required>
+                    
+                    <!-- !!! YAHAN APNI WEB3FORMS ACCESS KEY DAALEIN !!! -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    
+                    <input type="text" id="waName" name="Name" class="input-box" placeholder="Your Name" required>
+                    <input type="email" id="waEmail" name="Email" class="input-box" placeholder="Your Email ID" required>
+                    <input type="tel" id="waPhone" name="Phone" class="input-box" placeholder="Mobile Number" required>
+                    
+                    <select id="waCourse" name="Course" class="input-box" required>
                         <option value="">Select Your Target Exam / Class</option>
                         <option value="9th Grade (Maths & Science)">9th Grade (Maths & Science)</option>
                         <option value="10th Grade (Maths & Science)">10th Grade (Maths & Science)</option>
@@ -168,23 +173,34 @@
         <p>&copy; 2026 Arka-Medha Education. All Rights Reserved.</p>
     </footer>
 
-    <!-- Form Script -->
+    <!-- Script for Background Email & WhatsApp Redirect -->
     <script>
         document.getElementById('verifiedWaForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Page ko refresh hone se rokega
             
-            // Get form values
+            // 1. Web3Forms ko data bhej kar Email receive karna
+            const formData = new FormData(this);
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                console.log("Email request sent");
+            }).catch(error => {
+                console.error("Email Error:", error);
+            });
+
+            // 2. WhatsApp ke liye message format karna
             const name = document.getElementById('waName').value;
             const phone = document.getElementById('waPhone').value;
+            const email = document.getElementById('waEmail').value;
             const course = document.getElementById('waCourse').value;
             
-            // Format WhatsApp Message
-            const message = `Hello Arka-Medha Education!%0A%0AI would like to book a free demo/counseling session.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Target Course:* ${course}`;
+            const message = `Hello Arka-Medha Education!%0A%0AI would like to book a free demo/counseling session.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Target Course:* ${course}`;
             
-            // Redirect to WhatsApp
-            const targetNumber = '919165550105'; // Format without + or space
+            const targetNumber = '919165550105'; // Aapka WhatsApp Number
             const whatsappUrl = `https://wa.me/${targetNumber}?text=${message}`;
             
+            // 3. WhatsApp open karna
             window.open(whatsappUrl, '_blank');
         });
     </script>
