@@ -3,206 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arka-Medha Education - Premium Coaching Institute</title>
-    <meta name="description" content="Arka-Medha Education: Igniting Minds, Illuminating Futures. Premium coaching for Classes 9th, 10th, 11th, 12th PCM, JEE Main/Advanced, NEET, and NDA in Makronia, Sagar.">
-    
+    <title>Arka-Medha Education | Excellence in Maths & Physics</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
-        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        /* Base Styling */
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; }
+        a { text-decoration: none; color: inherit; }
         
-        /* Navbar */
-        .navbar { background: #0f2027; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        .navbar .logo-container { display: flex; align-items: center; gap: 12px; }
-        .navbar .logo-img { height: 45px; width: auto; }
-        .navbar .logo-text { color: #fff; font-size: 24px; font-weight: bold; }
-        .navbar ul { display: flex; list-style: none; }
-        .navbar ul li { margin-left: 25px; }
-        .navbar ul li a { color: #dfdfdf; text-decoration: none; font-size: 16px; font-weight: 500; }
-        .navbar ul li a:hover { color: #f8b500; }
+        /* Top Bar */
+        .top-bar { background-color: #2c3e50; color: white; padding: 10px 50px; display: flex; justify-content: space-between; font-size: 14px; }
+        .top-bar span { margin-right: 20px; }
 
-        /* Hero Banner */
-        .hero { background: linear-gradient(rgba(15, 32, 39, 0.88), rgba(15, 32, 39, 0.88)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80') no-repeat center center/cover; height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 20px; }
-        .hero h1 { font-size: 46px; margin-bottom: 5px; color: #f8b500; }
-        .hero .tagline { font-size: 16px; font-style: italic; color: #dfdfdf; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; border-bottom: 1px solid #f8b500; padding-bottom: 8px; }
-        .hero p { font-size: 19px; margin-bottom: 30px; max-width: 650px; }
-        .hero .btn { background: #f8b500; color: #0f2027; padding: 14px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 18px; }
-
-        /* Courses */
-        .courses { padding: 60px 20px; max-width: 1200px; margin: auto; text-align: center; }
-        .courses h2 { font-size: 34px; margin-bottom: 45px; color: #0f2027; }
-        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .course-card { background: #fff; padding: 35px 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); text-align: left; border-top: 4px solid #f8b500; }
-        .course-card h3 { color: #0f2027; margin-bottom: 15px; font-size: 22px; }
-        .course-card p { color: #555; font-size: 15px; }
-
-        /* Contact Section */
-        .contact-section { background: #0f2027; color: white; padding: 60px 20px; }
-        .contact-container { max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
-        .contact-info { width: 100%; }
-        .contact-info h2 { color: #f8b500; margin-bottom: 15px; font-size: 30px; }
-        .contact-address { margin-bottom: 25px; font-size: 15px; color: #dfdfdf; line-height: 1.8; }
-        .contact-address a { color: #f8b500; text-decoration: none; font-weight: bold; }
+        /* Header & Navigation */
+        header { background-color: white; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .logo h1 { margin: 0; color: #e74c3c; font-size: 28px; font-weight: 900; letter-spacing: 1px; }
+        .logo p { margin: 0; font-size: 12px; color: #7f8c8d; font-weight: bold; letter-spacing: 2px; }
         
-        /* Form Styling */
-        .input-box { width: 100%; padding: 14px; margin-bottom: 15px; border-radius: 5px; border: none; font-size: 16px; display: block; background: #fff; color: #333; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 30px; }
+        nav ul li a { font-weight: bold; color: #34495e; transition: 0.3s; }
+        nav ul li a:hover { color: #e74c3c; }
         
-        .submit-btn { width: 100%; padding: 15px; background-color: #f8b500 !important; color: #0f2027 !important; font-weight: bold; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; display: block; text-transform: uppercase; margin-top: 5px; }
-        .submit-btn:hover { background-color: #fff !important; transition: 0.3s; }
-        
-        /* Google Map */
-        .map-box { width: 100%; }
-        .map-box iframe { width: 100%; height: 350px; border-radius: 8px; border: none; display: block; }
+        .enroll-btn { background-color: #e74c3c; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+        .enroll-btn:hover { background-color: #c0392b; }
 
-        /* Floating WhatsApp Button */
-        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; padding: 15px 22px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; gap: 8px; font-size: 16px; }
-        .whatsapp-btn:hover { background-color: #1ebe57; }
+        /* Hero Section (Banner) */
+        .hero { background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; color: white; text-align: center; padding: 100px 20px; }
+        .hero h2 { font-size: 48px; margin-bottom: 15px; }
+        .hero p { font-size: 20px; margin-bottom: 30px; }
+        .hero-btn { background-color: #f1c40f; color: #2c3e50; padding: 15px 30px; font-size: 18px; font-weight: bold; border-radius: 5px; display: inline-block; }
+
+        /* Courses Section */
+        .section-title { text-align: center; margin: 50px 0 30px; font-size: 32px; color: #2c3e50; }
+        .courses-container { display: flex; justify-content: center; gap: 30px; padding: 0 50px 50px; flex-wrap: wrap; }
+        
+        .course-card { background: white; width: 300px; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; text-align: center; border-bottom: 4px solid #e74c3c; }
+        .course-card:hover { transform: translateY(-10px); box-shadow: 0 15px 25px rgba(0,0,0,0.15); }
+        .course-header { background-color: #2c3e50; color: white; padding: 20px; font-size: 22px; font-weight: bold; }
+        .course-body { padding: 20px; }
+        .course-body p { color: #7f8c8d; font-size: 15px; line-height: 1.6; }
+        
+        /* Stats/Features Section */
+        .stats { background-color: #e74c3c; color: white; display: flex; justify-content: space-around; padding: 40px 50px; text-align: center; }
+        .stat-box h3 { font-size: 36px; margin: 0 0 10px; }
+        .stat-box p { font-size: 18px; margin: 0; }
 
         /* Footer */
-        footer { background: #0b171c; color: #dfdfdf; text-align: center; padding: 20px; margin-top: auto; }
+        footer { background-color: #2c3e50; color: white; text-align: center; padding: 30px; margin-top: 40px; }
     </style>
 </head>
 <body>
 
-    <!-- Floating Chat Link connected directly to your number -->
-    <a href="https://wa.me/919165550105" class="whatsapp-btn" target="_blank">
-        💬 Chat on WhatsApp
-    </a>
-
-    <!-- Navbar Container -->
-    <nav class="navbar">
-        <div class="logo-container">
-            <img src="logo.png" alt="Arka-Medha Logo" class="logo-img" onerror="this.style.display='none';">
-            <div class="logo-text">Arka-Medha</div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div>
+            <span>📞 Helpline: +91 9876543210</span>
+            <span>✉️ info@arkamedha.com</span>
         </div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#courses">Our Courses</a></li>
-            <li><a href="#contact">Contact & Map</a></li>
-        </ul>
-    </nav>
+        <div>
+            <span>Sagar, Madhya Pradesh</span>
+        </div>
+    </div>
 
-    <!-- Hero Banner -->
-    <header class="hero">
-        <h1>Arka-Medha Education</h1>
-        <div class="tagline">Igniting Minds, Illuminating Futures</div>
-        <p>Master Physics, Chemistry, and Mathematics with top faculties. Step-by-step foundation preparation designed to crack your dream exams.</p>
-        <a href="#contact" class="btn">Book Free Demo Class</a>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">
+            <h1>ARKA-MEDHA</h1>
+            <p>EDUCATION</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Results</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="enroll-btn">Apply Now</a>
     </header>
 
-    <!-- Courses Grid -->
-    <section class="courses" id="courses">
-        <h2>Our Featured Programs</h2>
-        <div class="course-grid">
-            <div class="course-card">
-                <h3>9th Foundation (Maths & Science)</h3>
-                <p>Build strong concepts from the ground up. Thorough coverage of school curriculum aligned with early foundation level for future competitive exams like JEE and NEET.</p>
-            </div>
-            <div class="course-card">
-                <h3>10th Board & Foundation</h3>
-                <p>Excel in Board Exams with deep analytical clarity in Mathematics, Physics, and Chemistry. Includes special trick sessions, mock test papers, and concept building modules.</p>
-            </div>
-            <div class="course-card">
-                <h3>11th CBSE/State Board (PCM)</h3>
-                <p>Master core Physics, Chemistry, and Mathematics fundamentals. Special focus on school/board curriculum with basic to advanced concept formulation for entrance exams.</p>
-            </div>
-            <div class="course-card">
-                <h3>12th Board & Revision (PCM)</h3>
-                <p>Target maximum scores in board exams with rigorous practice. In-depth revision of PCM syllabus, answer-writing methods, sample papers, and comprehensive performance tests.</p>
-            </div>
-            <div class="course-card">
-                <h3>JEE Main & Advanced</h3>
-                <p>Comprehensive training for Engineering aspirants. Deep dive into Core Physics, Chemistry, and Mathematics with advanced problem-solving techniques and regular test series.</p>
-            </div>
-            <div class="course-card">
-                <h3>NEET Preparation</h3>
-                <p>Excel in Medical entrance exams with strong fundamentals in Physics and Chemistry. Detailed concepts, high-yield study materials, and rigorous practice sessions.</p>
-            </div>
-            <div class="course-card">
-                <h3>NDA Entrance Exam</h3>
-                <p>Specialized batch for Defence aspirants. Focus on Mathematics and General Ability tests with structured timelines, previous year papers analysis, and time-management tips.</p>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Master Mathematics & Physics</h2>
+        <p>Expert Guidance for JEE Main & Board Exams</p>
+        <a href="#" class="hero-btn">Explore New Batches</a>
+    </section>
+
+    <!-- Features / Stats -->
+    <section class="stats">
+        <div class="stat-box">
+            <h3>11+</h3>
+            <p>Years of Excellence</p>
+        </div>
+        <div class="stat-box">
+            <h3>96%ile</h3>
+            <p>Highest JEE Score Target</p>
+        </div>
+        <div class="stat-box">
+            <h3>100%</h3>
+            <p>Concept Clarity</p>
         </div>
     </section>
 
-    <!-- Contact & Form Section -->
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <!-- Form Box -->
-            <div class="contact-info">
-                <h2>Free Counseling Form</h2>
-                <div class="contact-address">
-                    <strong>📍 Address:</strong> Above Axis Bank, Neha Nagar, Makronia, Sagar, M.P. - 470004<br>
-                    <strong>📞 Phone:</strong> <a href="tel:+919165550105">+91 9165550105</a>
-                </div>
-                
-                <!-- Web3Forms + WhatsApp Combined Form -->
-                <form id="verifiedWaForm">
-                    
-                    <!-- !!! YAHAN APNI WEB3FORMS ACCESS KEY DAALEIN !!! -->
-                    <input type="hidden" name="access_key" value="a739493d-b333-4afc-89ac-0834625914bf">
-                    
-                    <input type="text" id="waName" name="Name" class="input-box" placeholder="Your Name" required>
-                    <input type="email" id="waEmail" name="Email" class="input-box" placeholder="Your Email ID" required>
-                    <input type="tel" id="waPhone" name="Phone" class="input-box" placeholder="Mobile Number" required>
-                    
-                    <select id="waCourse" name="Course" class="input-box" required>
-                        <option value="">Select Your Target Exam / Class</option>
-                        <option value="9th Grade (Maths & Science)">9th Grade (Maths & Science)</option>
-                        <option value="10th Grade (Maths & Science)">10th Grade (Maths & Science)</option>
-                        <option value="11th Grade (PCM)">11th Grade (PCM)</option>
-                        <option value="12th Grade (PCM)">12th Grade (PCM)</option>
-                        <option value="JEE Main & Advanced">JEE Main & Advanced</option>
-                        <option value="NEET Preparation">NEET Preparation</option>
-                        <option value="NDA Entrance">NDA Entrance</option>
-                    </select>
-                    
-                    <button type="submit" class="submit-btn">SUBMIT DETAILS</button>
-                </form>
-            </div>
-            
-            <!-- Google Map Embedded -->
-            <div class="map-box">
-                <h3 style="margin-bottom: 15px; color: #f8b500;">Our Location Map</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.330883652875!2d78.7846!3d23.8378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3978d14a2a704257%3A0xc3cf9c77174cb862!2sMakronia%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1691234567890!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- Courses Section -->
+    <h2 class="section-title">Our Premium Programs</h2>
+    <div class="courses-container">
+        
+        <div class="course-card">
+            <div class="course-header" style="background-color: #2980b9;">JEE Target Batch</div>
+            <div class="course-body">
+                <p>Intensive coaching focusing on advanced Mathematics and Physics concepts to crack JEE Main with top percentiles.</p>
+                <a href="#" style="color: #2980b9; font-weight: bold;">Read More ➔</a>
             </div>
         </div>
-    </section>
+
+        <div class="course-card">
+            <div class="course-header" style="background-color: #27ae60;">12th Board Focus</div>
+            <div class="course-body">
+                <p>Complete syllabus coverage for MP Board and CBSE. Master the fundamentals and secure maximum marks in board exams.</p>
+                <a href="#" style="color: #27ae60; font-weight: bold;">Read More ➔</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-header" style="background-color: #8e44ad;">Foundation (11th)</div>
+            <div class="course-body">
+                <p>Build a rock-solid base in Maths and Physics right from class 11th to stay ahead of the competition.</p>
+                <a href="#" style="color: #8e44ad; font-weight: bold;">Read More ➔</a>
+            </div>
+        </div>
+
+    </div>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Arka-Medha Education. All Rights Reserved.</p>
     </footer>
 
-    <!-- Script for Background Email & WhatsApp Redirect -->
-    <script>
-        document.getElementById('verifiedWaForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Page ko refresh hone se rokega
-            
-            // 1. Web3Forms ko data bhej kar Email receive karna
-            const formData = new FormData(this);
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            }).then(response => {
-                console.log("Email request sent");
-            }).catch(error => {
-                console.error("Email Error:", error);
-            });
-
-            // 2. WhatsApp ke liye message format karna
-            const name = document.getElementById('waName').value;
-            const phone = document.getElementById('waPhone').value;
-            const email = document.getElementById('waEmail').value;
-            const course = document.getElementById('waCourse').value;
-            
-            const message = `Hello Arka-Medha Education!%0A%0AI would like to book a free demo/counseling session.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Target Course:* ${course}`;
-            
-            const targetNumber = '919165550105'; // Aapka WhatsApp Number
-            const whatsappUrl = `https://wa.me/${targetNumber}?text=${message}`;
-            
-            // 3. WhatsApp open karna
-            window.open(whatsappUrl, '_blank');
-        });
-    </script>
 </body>
 </html>
