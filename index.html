@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- यह लाइन गिटहब पर फॉर्म सबमिशन एरर को 100% ब्लॉक होने से रोकती है -->
+    <meta name="referrer" content="origin">
+    
     <title>Arka-Medha Education - Premium Coaching Institute</title>
     <meta name="description" content="Arka-Medha Education: Igniting Minds, Illuminating Futures. Premium coaching for Classes 9th, 10th, 11th, 12th PCM, JEE Main/Advanced, NEET, and NDA in Makronia, Sagar.">
     
@@ -47,8 +50,8 @@
         .input-box { width: 100%; padding: 14px; margin-bottom: 15px; border-radius: 5px; border: none; font-size: 16px; display: block; background: #fff; color: #333; }
         
         /* Yellow Submit Button */
-        .submit-btn { width: 100%; padding: 15px; background-color: #f8b500; color: #0f2027; font-weight: bold; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; display: block; text-transform: uppercase; margin-top: 5px; }
-        .submit-btn:hover { background-color: #fff; }
+        .submit-btn { width: 100%; padding: 15px; background-color: #f8b500 !important; color: #0f2027 !important; font-weight: bold; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; display: block; text-transform: uppercase; margin-top: 5px; }
+        .submit-btn:hover { background-color: #fff !important; }
         
         /* Google Map */
         .map-box { width: 100%; }
@@ -65,7 +68,7 @@
         💬 Chat on WhatsApp
     </a>
 
-    <!-- Navbar -->
+    <!-- Navbar Container -->
     <nav class="navbar">
         <div class="logo-container">
             <img src="logo.png" alt="Arka-Medha Logo" class="logo-img" onerror="this.style.display='none';">
@@ -124,7 +127,7 @@
     <!-- Contact & Form Section -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
-            <!-- Form Block -->
+            <!-- Form Box -->
             <div class="contact-info">
                 <h2>Free Counseling Form</h2>
                 <div class="contact-address">
@@ -147,9 +150,4 @@
                         <option value="NDA Entrance">NDA Entrance</option>
                     </select>
                     
-                    <input type="submit" value="SUBMIT DETAILS" class="submit-btn">
-                </form>
-            </div>
-            
-            <!-- Map Box -->
-            <div class="map-box">
+                    <button type="submit" class="submit-btn">SUBMIT DETAILS</button>
