@@ -43,12 +43,14 @@
         .contact-address { margin-bottom: 25px; font-size: 15px; color: #dfdfdf; line-height: 1.8; }
         .contact-address a { color: #f8b500; text-decoration: none; font-weight: bold; }
         
-        /* Form Styling */
+        /* Form Inputs Styling */
         .input-box { width: 100%; padding: 14px; margin-bottom: 15px; border-radius: 5px; border: none; font-size: 16px; display: block; background: #fff; color: #333; }
-        .submit-btn { width: 100%; padding: 15px; background-color: #f8b500; color: #0f2027; font-weight: bold; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; display: block; text-transform: uppercase; margin-top: 5px; }
-        .submit-btn:hover { background-color: #fff; }
         
-        /* Map Box */
+        /* Yellow Submit Button */
+        .submit-btn { width: 100%; padding: 15px; background-color: #f8b500 !important; color: #0f2027 !important; font-weight: bold; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; display: block; text-transform: uppercase; margin-top: 5px; }
+        .submit-btn:hover { background-color: #fff !important; }
+        
+        /* Google Map */
         .map-box { width: 100%; }
         .map-box iframe { width: 100%; height: 350px; border-radius: 8px; border: none; display: block; }
 
@@ -58,7 +60,7 @@
 </head>
 <body>
 
-    <!-- Floating WhatsApp Chat (Always Works) -->
+    <!-- Floating Chat Link connected directly to your number -->
     <a href="https://wa.me." class="whatsapp-btn" target="_blank">
         💬 Chat on WhatsApp
     </a>
@@ -122,18 +124,19 @@
     <!-- Contact & Form Section -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
+            <!-- Form Box -->
             <div class="contact-info">
                 <h2>Free Counseling Form</h2>
                 <div class="contact-address">
                     <strong>📍 Address:</strong> Above Axis Bank, Neha Nagar, Makronia, Sagar, M.P. - 470004<br>
-                    <strong>📞 Phone:</strong> <a href="tel:+919165550105">+91 9165550105</a>
+                    <strong>📞 Phone:</strong> <a href="tel:+9165550105">+91 65550105</a>
                 </div>
                 
-                <!-- 100% Fixed Method and Action Parameters -->
-                <form action="https://formspree.io" method="POST">
-                    <input type="text" name="student_name" class="input-box" placeholder="Your Name" required>
-                    <input type="tel" name="mobile_number" class="input-box" placeholder="Mobile Number" required>
-                    <select name="selected_course" class="input-box" required>
+                <!-- This Form runs completely inside the browser to avoid server blocking errors -->
+                <form id="whatsappForm">
+                    <input type="text" id="stuName" class="input-box" placeholder="Your Name" required>
+                    <input type="tel" id="stuPhone" class="input-box" placeholder="Mobile Number" required>
+                    <select id="stuCourse" class="input-box" required>
                         <option value="">Select Your Target Exam / Class</option>
                         <option value="9th Grade (Maths & Science)">9th Grade (Maths & Science)</option>
                         <option value="10th Grade (Maths & Science)">10th Grade (Maths & Science)</option>
@@ -149,8 +152,3 @@
             </div>
             
             <div class="map-box">
-                <h3 style="margin-bottom: 15px; color: #f8b500;">Our Location Map</h3>
-                <iframe src="https://google.com"></iframe>
-            </div>
-        </div>
-    </section>
